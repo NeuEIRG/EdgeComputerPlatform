@@ -1,0 +1,50 @@
+#
+# Development environment for the Dronecode SDK based on Fedora 27.
+#
+# Author: Julian Oes <julian@oes.ch>
+#
+
+FROM fedora:27
+
+MAINTAINER Julian Oes <julian@oes.ch>
+
+RUN dnf -y install \
+    autoconf \
+    automake \
+    clang \
+    colordiff \
+    cmake \
+    doxygen \
+    gcc \
+    gcc-c++ \
+    git \
+    libcurl-devel \
+    libtool \
+    python \
+    tinyxml2-devel \
+    redhat-rpm-config \
+    rpm-build \
+    ruby-devel \
+    rubygems \
+    wget \
+    which \
+    zlib-devel \
+    golang \
+    sudo \
+    && dnf clean all
+
+RUN wget http://releases.llvm.org/6.0.0/clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27.tar.xz \
+    && tar xvfJ clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27.tar.xz \
+    && cp clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27/bin/clang-format /usr/local/bin/ \
+    && rm -rf clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27.tar.xz clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27
+
+RUN gem install --no-ri --no-rdoc fpm;
+
+ADD /sudoers.txt /etc/sudoers
+RUN chmod 440 /etc/sudoers
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+WORKDIR "/home/user/DronecodeSDK"

@@ -1,0 +1,2 @@
+g++ -std=c++11 main.cpp webcam.cpp Jpeg2AVI.cpp list.cpp -omain -lv4l2 -ljpeg
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMavLinkComFileSystem.a  CMakeFiles/MavLinkComFileSystem.dir/FileSystem.cpp.o CMakeFiles/MavLinkComFileSystem.dir/ThreadUtils.cpp.o
+/usr/bin/ranlib libMavLinkComFileSystem.a

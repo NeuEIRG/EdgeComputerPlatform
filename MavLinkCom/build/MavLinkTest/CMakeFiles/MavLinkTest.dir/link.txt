@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread -g -O0  -rdynamic CMakeFiles/MavLinkTest.dir/Commands.cpp.o CMakeFiles/MavLinkTest.dir/UnitTests.cpp.o CMakeFiles/MavLinkTest.dir/main.cpp.o  -o MavLinkTest ../src/libMavLinkCom.a ../common_utils/libMavLinkComFileSystem.a 
