@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<errno.h>
@@ -78,6 +78,8 @@ int main(int argc, char** argv){
             if(n == 0)
                 break;
             fwrite(buff, 1, n, fp);
+            //fwrite ( const void * ptr, size_t size, size_t count, FILE * stream );
+　　　　    //其中，ptr：指向保存数据的指针；size：每个数据类型的大小；count：数据的个数；stream：文件指针
         }
         buff[n] = '\0';
         printf("recv msg from client: %s\n", buff);
