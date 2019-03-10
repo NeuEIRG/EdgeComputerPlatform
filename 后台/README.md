@@ -1,16 +1,18 @@
-#MAVLINK
+# MAVLINK
 
-##后台##
+## 后台
 
 *后台的MavLinkCom是一个跨平台的C ++库，可以帮助连接到基于MavLink的车辆并与之通信。特别是这个库可以很好地与基于PX4的无人机配合使用。我们主要使用了MavLinkCom的TCP与UDP协议。
 
 *后台的server.c可以接受TX2发来的图片，使用的是单独的TCP协议。
 
-###MavLinkCom###
+### MavLinkCom
 
 *我们简单的实现了后台发送指令以实现无人机起飞、降落等功能，比如后台发送t，TX2收到后会根据指令起飞：
 
 ```
+ t为后台发送的消息，TX2会判断消息并执行相应操作 
+
  case 't':
    std::cout<<"qqq"<<std::endl;
    monitoredTakeoff(vehicle);
@@ -27,7 +29,7 @@
 
 *MavLinkCom中已有编好的CMakeLists，可以直接在linux下使用cmake的命令运行，也可以在任何支持C/C++的编译环境中使用。
 
-###server.c###
+### server.c
 
 *能够接收TX2传来的图片，目前将接收到的图片写入到本地，
 
