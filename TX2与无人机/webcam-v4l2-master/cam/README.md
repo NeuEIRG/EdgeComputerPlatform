@@ -12,7 +12,7 @@ $ sudo apt install libv4l2-dev
 对于libjpeg库, 首先要在libjpeg官网上下载源代码（ http://www.ijg.org）,再按照源码中的指示安装即可
 ```
 
-之后，通过一下命令即可构建demo:
+之后，通过以下命令即可构建demo:
 ```
 $ g++ -std=c++11 main.cpp webcam.cpp Jpeg2AVI.cpp list.cpp -omain -lv4l2 -ljpeg
 ```
