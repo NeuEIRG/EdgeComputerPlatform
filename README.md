@@ -18,24 +18,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
- char DataName[1000]="/home/wz/Desktop/image/";
-
-```
