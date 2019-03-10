@@ -5,12 +5,10 @@
 
 int main ()
 {
-
+    int imageNo;
+    imageBuffer* p=getImageBuf(imageNo);
+    saveJpg(p, imageNo);
     creatVideo(3);
-    
-
-    
-
     return 1;
 
 }
