@@ -1,19 +1,20 @@
-# MAVLINK
+# 无人机边缘计算平台
 
-*�����Ŀ�ĺ�̨����ͨ�����͵�TX2��ָ��ִ����Ӧ�Ĳ�����
+本项目实现云边端，主要包括两个部分
+这个项目的后台可以通过发送到TX2的指令执行相应的操作。
 
 ## Cloud ##
 
-*��̨��MavLinkCom��ʵ����tcp��udp����Ϣ����ĺ�̨���ܣ�����ͨ����̨��TX2������Ϣ��Ҳ���Խ���TX2�����ص���Ϣ��MavLinkCom  �ľ��幦�ܺͽṹ���MavLinkCom��readme��
+*后台的MavLinkCom中实现了tcp、udp等信息传输的后台功能，可以通过后台向TX2发送信息，也可以接收TX2反馈回的信息，MavLinkCom  的具体功能和结构详见MavLinkCom的readme。
 
-*��̨��server.c���Խ��ܵ�TX2���͵�ͼƬ��
+*后台的server.c可以接受到TX2发送的图片。
 
 
 ## Edge ##
 
-*ǰ����webcam-v4l2-master�Ĺ����������ɼ��������ɼ���������֡���͵���̨��
+*前端中webcam-v4l2-master的功能是视屏采集，并将采集的视屏逐帧发送到后台。
 
-*Integration edition SDK-2019-1-17�ǽ����˻���SDK��MavLinkCom�������Ϻ����Ŀ���ܹ����̨�����˻�ͨ�š�
+*Integration edition SDK-2019-1-17是将无人机的SDK与MavLinkCom代码整合后的项目，能够与后台和无人机通信。
 
 
 
