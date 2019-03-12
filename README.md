@@ -1,20 +1,17 @@
 # 无人机边缘计算平台
 
-本项目实现云边端，主要包括两个部分
-这个项目的后台可以通过发送到TX2的指令执行相应的操作。
+## 阶段一：实现云边端通信
 
-## Cloud ##
+本阶段代码包括云端和边缘端两部分。
 
-*后台的MavLinkCom中实现了tcp、udp等信息传输的后台功能，可以通过后台向TX2发送信息，也可以接收TX2反馈回的信息，MavLinkCom  的具体功能和结构详见MavLinkCom的readme。
+### 云端(Cloud)
 
-*后台的server.c可以接受到TX2发送的图片。
+本部分程序实现了TCP和UDP传输信息的功能，本部分可以和边缘端通信具体详见[说明](https://github.com/NeuEIRG/EdgeComputerPlatform/tree/master/Cloud)。
 
+### 边缘端(Edge)
 
-## Edge ##
+本部分代码包括边缘端和云端通信代码及无人机飞行控制和数据获取接口代码[说明](https://github.com/NeuEIRG/EdgeComputerPlatform/tree/master/Edge)。
 
-*前端中webcam-v4l2-master的功能是视屏采集，并将采集的视屏逐帧发送到后台。
-
-*Integration edition SDK-2019-1-17是将无人机的SDK与MavLinkCom代码整合后的项目，能够与后台和无人机通信。
 
 
 
